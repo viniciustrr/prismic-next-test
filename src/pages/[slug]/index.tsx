@@ -1,20 +1,24 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
+import Header from '../../components/header';
 import { createClient } from '../../services/prismic'
-import { MainPage } from '../../types/prismic'
-import { getMainPage } from '../../utils/getPrismicData';
+import { BlogPost } from '../../types/prismic'
+import { getBlogPosts} from '../../utils/getPrismicData';
+import PostPageView from '../../views/blogPost';
+
 
 type Props = {
-    slug: String,
-    postPage: MainPage;
+    postInfo: BlogPost;
 }
 
 
-function PostPage({ slug, postPage }: Props) {
-    console.log(slug, postPage)
+function PostPage({postInfo }: Props) {
+
  return (
-   <div>
-    {postPage.slices[0].items.filter(post => post.slug === slug )[0].title}
-   </div>
+    <>
+    <Header/>
+    <PostPageView blogPost={postInfo} />
+    </>
+   
 )}
 
 
@@ -23,13 +27,12 @@ export default PostPage
 
 
 export const getStaticPaths:GetStaticPaths = async () => {
-    const page = await getMainPage()
-    console.log(page)
+    const blogPosts = await getBlogPosts();
 
-    const paths = page.slices[0].items.map((item)=>{
+    const paths = blogPosts.map((item)=>{
         return {
             params: {
-                slug: item.slug 
+                slug: item.uid
             }
         }
     })
@@ -41,11 +44,15 @@ export const getStaticPaths:GetStaticPaths = async () => {
   
 
 export const getStaticProps:GetStaticProps = async ({ previewData, params }) => {
-    const page = await getMainPage(previewData)
+    const blogPost = await getBlogPosts(previewData);
+    const blogPostInfo  = blogPost.filter(function(item) {
+        return item.uid === params.slug;
+    })[0]
+
+
     return {
         props: {
-          slug: params.slug,
-          postPage: page
+          postInfo: blogPostInfo,
         },
       }
 }

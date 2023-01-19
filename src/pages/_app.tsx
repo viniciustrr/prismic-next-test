@@ -3,6 +3,12 @@ import {PrismicPreview} from "@prismicio/next";
 import { repositoryName, linkResolver } from "../services/prismic";
 import Link from 'next/link';
 import "../styles/global.css";
+import {Inter} from "@next/font/google";
+
+const inter = Inter({
+    subsets:['latin'],
+    weight:["400","700"]
+})
 
 export default function App({Component, pageProps}) {
     return( 
@@ -14,7 +20,9 @@ export default function App({Component, pageProps}) {
         )}
         >
             <PrismicPreview repositoryName={repositoryName}>
-                <Component {...pageProps}/>
+                <main className={inter.className}>
+                    <Component {...pageProps}/>
+                </main>
             </PrismicPreview>
 
         </PrismicProvider>

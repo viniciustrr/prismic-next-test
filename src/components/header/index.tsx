@@ -1,16 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
+import { LogoIcon } from '../../assets/svg'
 import { Image } from '../../types/prismic'
 import styles from './styles.module.scss'
 
-type Props = {
-    data: Image
-}
 
-function Header({ data }: Props) {
+
+function Header() {
  return (
    <div className={styles.Header}>
     <div className={styles.HeaderContainer}>
-        <img src={data.url} alt={data.alt} />
+        <LogoIcon/>
     </div>
     
    </div>

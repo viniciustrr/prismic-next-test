@@ -1,0 +1,39 @@
+.Post{
+    
+    cursor: pointer;
+    border-radius: 8px;
+    outline: none;
+    margin-top: 48px;
+
+    h1{
+        color: #fff;
+        font-size: 28px;
+    }
+    h2{
+        font-weight: 400;
+        font-size: 18px;
+        margin-top: 0;
+        color: #D7D7D7;
+    }
+    .PostFooter{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 24px;
+
+        .PostIcon{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+            p{
+                color: #D7D7D7;
+            }
+        }
+    }
+}
+
+.NoDecoration{
+    text-decoration: none;
+}
+

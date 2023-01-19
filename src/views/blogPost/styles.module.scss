@@ -1,0 +1,59 @@
+.PostPageView{
+    width: 100%;
+    background: #1A1D23 ;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    .PostPageBanner{
+        width: 100%;
+        img{
+            width: 100%;
+        }
+    }
+
+    .PostPageContainer{
+        width: 900px;
+        margin-top: 80px;
+        padding-bottom: 80px;
+
+        .PostPageTitle{
+
+            h1{
+                color: #fff;
+                font-size: 48px ;
+            }
+        }
+
+        .PostPageInfo{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 24px;
+            .PostPageIconInfo{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 8px ;
+                color: #BBBBBB;
+            }
+        }
+
+        .PostPageBody{
+            margin-top: 64px;
+            .PostPageContent{
+                h2{
+                    color: #fff;
+                    font-size: 36px;
+                }
+
+                .PostPageRichText{
+                    color: #D7D7D7;
+                }
+            }
+        }
+    }
+
+}

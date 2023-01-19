@@ -1,10 +1,9 @@
-import { MainPage } from './../types/prismic';
+
 import { createClient } from "../services/prismic"
 
 
-
-export async function getMainPage(previewData?){
+export async function getBlogPosts(previewData?){
     const client = createClient({ previewData })
-    const page = await client.getSingle('main_page')
-    return page.data;
+    const page = await client.getAllByType('blog_post')
+    return page;
 }
