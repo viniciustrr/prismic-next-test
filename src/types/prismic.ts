@@ -1,5 +1,7 @@
 import * as prismicT from "@prismicio/types";
 
+export type Image = prismicT.ImageField;
+
 export type Post = {
     title: prismicT.KeyTextField,
     description: prismicT.KeyTextField,
