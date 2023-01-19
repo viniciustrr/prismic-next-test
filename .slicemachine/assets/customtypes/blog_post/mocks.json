@@ -1,0 +1,78 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "badly"
+  },
+  "title": {
+    "__TYPE__": "FieldContent",
+    "value": "please",
+    "type": "Text"
+  },
+  "subtitle": {
+    "__TYPE__": "FieldContent",
+    "value": "brick",
+    "type": "Text"
+  },
+  "author": {
+    "__TYPE__": "FieldContent",
+    "value": "wrapped",
+    "type": "Text"
+  },
+  "banner": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8",
+      "width": 3456,
+      "height": 3456
+    },
+    "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8",
+    "width": 3456,
+    "height": 3456,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  },
+  "content": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "heading",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "add",
+              "type": "Text"
+            }
+          ],
+          [
+            "body",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Adipisicing sit occaecat ex consequat fugiat nisi aliqua officia velit aliquip et aliquip quis officia. Excepteur nisi aute fugiat consequat velit in et sunt. Nisi esse ea commodo quis."
+                  }
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "slices": {
+    "__TYPE__": "SliceContentType",
+    "value": []
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "_cts": {
+    "blog_post": {
+      "content": {
+        "body": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
+        }
+      }
+    },
+    "postslist": {},
+    "posts_lists": {},
+    "main_page": {}
+  },
+  "slices": {
+    "Post": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Header": {}
+  }
+}

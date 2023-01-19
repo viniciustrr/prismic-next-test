@@ -1,0 +1,46 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {},
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "title",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "activity",
+              "type": "Text"
+            }
+          ],
+          [
+            "description",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "riding",
+              "type": "Text"
+            }
+          ],
+          [
+            "author",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "article",
+              "type": "Text"
+            }
+          ],
+          [
+            "postdate",
+            {
+              "__TYPE__": "FieldContent",
+              "type": "Date",
+              "value": "2013-11-06"
+            }
+          ]
+        ]
+      }
+    ]
+  }
+]
