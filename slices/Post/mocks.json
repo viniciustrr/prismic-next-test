@@ -38,6 +38,14 @@
               "type": "Date",
               "value": "2013-11-06"
             }
+          ],
+          [
+            "slug",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "age",
+              "type": "Text"
+            }
           ]
         ]
       }

@@ -156,136 +156,7 @@ type MainPageDocumentDataSlicesSlice = PostSlice;
  * @typeParam Lang - Language API ID of the document.
  */
 export type MainPageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<MainPageDocumentData>, "main_page", Lang>;
-/** Content for posts_lists documents */
-interface PostsListsDocumentData {
-    /**
-     * titulo field in *posts_lists*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: posts_lists.titulo
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    titulo: prismicT.KeyTextField;
-    /**
-     * Slice Zone field in *posts_lists*
-     *
-     * - **Field Type**: Slice Zone
-     * - **Placeholder**: *None*
-     * - **API ID Path**: posts_lists.slices[]
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
-     *
-     */
-    slices: prismicT.SliceZone<PostsListsDocumentDataSlicesSlice>;
-}
-/**
- * Slice for *posts_lists → Slice Zone*
- *
- */
-type PostsListsDocumentDataSlicesSlice = HeaderSlice | PostSlice;
-/**
- * posts_lists document from Prismic
- *
- * - **API ID**: `posts_lists`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type PostsListsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<PostsListsDocumentData>, "posts_lists", Lang>;
-/** Content for postsList documents */
-interface PostslistDocumentData {
-    /**
-     * logo field in *postsList*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: postslist.logo
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    logo: prismicT.ImageField<never>;
-    /**
-     * Slice Zone field in *postsList*
-     *
-     * - **Field Type**: Slice Zone
-     * - **Placeholder**: *None*
-     * - **API ID Path**: postslist.slices[]
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
-     *
-     */
-    slices: prismicT.SliceZone<PostslistDocumentDataSlicesSlice>;
-}
-/**
- * Slice for *postsList → Slice Zone*
- *
- */
-type PostslistDocumentDataSlicesSlice = PostSlice;
-/**
- * postsList document from Prismic
- *
- * - **API ID**: `postslist`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type PostslistDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<PostslistDocumentData>, "postslist", Lang>;
-export type AllDocumentTypes = BlogPostDocument | MainPageDocument | PostsListsDocument | PostslistDocument;
-/**
- * Primary content in Header → Primary
- *
- */
-interface HeaderSliceDefaultPrimary {
-    /**
-     * Title field in *Header → Primary*
-     *
-     * - **Field Type**: Title
-     * - **Placeholder**: This is where it all begins...
-     * - **API ID Path**: header.primary.title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    title: prismicT.TitleField;
-    /**
-     * Description field in *Header → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: A nice description of your feature
-     * - **API ID Path**: header.primary.description
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    description: prismicT.RichTextField;
-}
-/**
- * Default variation for Header Slice
- *
- * - **API ID**: `default`
- * - **Description**: `Header`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type HeaderSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<HeaderSliceDefaultPrimary>, never>;
-/**
- * Slice variation for *Header*
- *
- */
-type HeaderSliceVariation = HeaderSliceDefault;
-/**
- * Header Shared Slice
- *
- * - **API ID**: `header`
- * - **Description**: `Header`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type HeaderSlice = prismicT.SharedSlice<"header", HeaderSliceVariation>;
+export type AllDocumentTypes = BlogPostDocument | MainPageDocument;
 /**
  * Item in Post → Items
  *
@@ -331,6 +202,16 @@ export interface PostSliceDefaultItem {
      *
      */
     postdate: prismicT.DateField;
+    /**
+     * slug field in *Post → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: post.items[].slug
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    slug: prismicT.KeyTextField;
 }
 /**
  * Default variation for Post Slice
@@ -360,6 +241,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { BlogPostDocumentData, BlogPostDocumentDataContentItem, BlogPostDocumentDataSlicesSlice, BlogPostDocument, MainPageDocumentData, MainPageDocumentDataSlicesSlice, MainPageDocument, PostsListsDocumentData, PostsListsDocumentDataSlicesSlice, PostsListsDocument, PostslistDocumentData, PostslistDocumentDataSlicesSlice, PostslistDocument, AllDocumentTypes, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, PostSliceDefaultItem, PostSliceDefault, PostSliceVariation, PostSlice };
+        export type { BlogPostDocumentData, BlogPostDocumentDataContentItem, BlogPostDocumentDataSlicesSlice, BlogPostDocument, MainPageDocumentData, MainPageDocumentDataSlicesSlice, MainPageDocument, AllDocumentTypes, PostSliceDefaultItem, PostSliceDefault, PostSliceVariation, PostSlice };
     }
 }

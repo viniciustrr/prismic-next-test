@@ -4,6 +4,7 @@ import { createClient } from '../services/prismic'
 import { components } from '../../slices'
 import { MainPage } from '../types/prismic'
 import Header from '../components/header'
+import { getMainPage } from '../utils/getPrismicData'
 
 
 type Props = {
@@ -14,6 +15,7 @@ const Page = ({ mainPage } : Props ) => {
   return(
   <>
     <Header data={mainPage.logo} />
+
   </>
   )
 }
@@ -21,13 +23,10 @@ const Page = ({ mainPage } : Props ) => {
 export default Page
 
 export async function getStaticProps({ previewData }) {
-  const client = createClient({ previewData })
- 
-
-  const page = await client.getSingle('main_page')
+  const page = await getMainPage(previewData)
   return {
     props: {
-      mainPage: page.data,
+      mainPage: page,
     },
   }
 }
