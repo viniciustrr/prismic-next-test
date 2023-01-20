@@ -33,7 +33,7 @@ export default Page
 
 export async function getStaticProps({ previewData }) {
 
-  const blogPosts = await (await getBlogPosts(previewData));
+  const blogPosts = await (await getBlogPosts(1,previewData));
   return {
     props: {
       blogPosts
